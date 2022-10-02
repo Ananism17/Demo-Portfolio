@@ -40,7 +40,7 @@
     position: fixed;
     width: 100%;
     padding: 30px 0;
-    /* background: #256D85; */
+    z-index: 999;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
 }
@@ -158,11 +158,60 @@
 .home .home-content:hover a {
     color: #256D85;
     background: none;
+    font-weight: 500;
 }
 
 
 
 
+/* Common Styling */
+
+section{
+    padding: 100px 0;;
+}
+
+.about, .services {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.about .about-content, .services .serv-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+Section .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+Section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+Section .title::after{
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    font-size: 20px;
+    color: #47B5FF;
+    padding: 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
 
 
 
@@ -175,51 +224,121 @@
 
 /* About section styling */
 
-section{
-    padding: 100px 0;;
-}
-
-.about {
-    font-family: 'Roboto Mono', monospace;
-}
-
-.about .title {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.about .title::before{
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 180px;
-    height: 3px;
-    background: #000;
-    transform: translateX(-50%);
-}
-
 .about .title::after{
     content: "Meow";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    font-size: 20px;
-    color: #47B5FF;
-    padding: 5px;
-    background: #fff;
-    transform: translateX(-50%);
+}
+
+
+.about .about-content .left {
+    width: 45%;
 }
 
 .about .about-content .left img {
     width: 400px;
     height: 400px;
     object-fit: cover;
+    border-radius: 6px;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right span {
+    color: #47B5FF;
+}
+
+.about .about-content .right p {
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    display: inline-block;
+    background: #256D85;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #256D85;
+    transition: all 0.3 ease;
+}
+
+.about .about-content .right a:hover{
+    color: #256D85;
+    background: none;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Services section styling */
+
+.services {
+    color: #fff;
+    background: #111;
+}
+
+.services .title::before{
+    background: #fff;
+}
+
+.services .title::after{
+    background: #111;
+    content: "Wuff";
+}
+
+.services .serv-content .card{
+    width: calc(50% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.services .serv-content .card:hover {
+    background: #256D85;
+}
+
+.services .serv-content .card .box {
+    transition: all 0.3 ease;
+}
+
+.services .serv-content .card:hover .box {
+    transform: scale(1.05);
+}
+
+.services .serv-content .card i {
+    font-size: 50px;
+    color: #47B5FF;
+    /* transition: color 0.3 ease; */
+}
+
+.services .serv-content .card:hover i {
+    color: #fff;
+}
+
+.services .serv-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
 }
 
 
@@ -238,9 +357,16 @@ section{
 
 /* Responsive media queries */
 
-@media (max-width: 1104px) {
+@media (max-width: 1300px) {
     .home .max-width {
         margin-left: 0px;
+    }
+}
+
+@media (max-width: 1104px) {
+    .about .about-content .left img {
+        width: 350px;
+        height: 350px;
     }
 }
 
@@ -271,7 +397,7 @@ section{
         width: 100%;
         left: -100%;
         top: 0;
-        background: #000;
+        background: #111;
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
@@ -304,7 +430,29 @@ section{
         font-size: 23px;
         padding: 10px 30px;
     }
+
+    .max-width {
+        max-width: 800px;
+    }
    
+    .about .about-content .column {
+        width: 100%;
+    }
+
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+
+    .about .about-content .right {
+        flex: 100%;
+    }
+
+    .services .serv-content .card {
+        width: 100%;
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 690px) {
