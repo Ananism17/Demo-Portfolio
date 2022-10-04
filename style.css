@@ -24,7 +24,9 @@
 }
 
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 
 
@@ -43,7 +45,7 @@ section{
     padding: 100px 0;;
 }
 
-.about, .services, .skills, .works, .contact {
+.about, .services, .skills, .works, .contact, footer {
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -115,7 +117,6 @@ Section .title::after{
 .navbar.sticky {
     padding: 12px 0;
     background: #256D85;
-    /* opacity: 0.85; */
 }
 
 .navbar .max-width {
@@ -140,6 +141,7 @@ Section .title::after{
 }
 
 .navbar .menu li a {
+    display: block;
     color: #fff;
     font-size: 15px;
     font-weight: 500;
@@ -162,7 +164,7 @@ Section .title::after{
 
 
 
-/* Hamburger button styling */
+/* Button styling */
 
 .menu-btn {
     color: #fff;
@@ -171,6 +173,34 @@ Section .title::after{
     display: none;
 }
 
+.scroll-up {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #06283D;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-up:hover {
+    font-size: 33px;
+}
 
 
 
@@ -231,7 +261,7 @@ Section .title::after{
     transition: all 0.3 ease;
 }
 
-.home .home-content:hover a {
+.home .home-content a:hover {
     color: #256D85;
     background: none;
     font-weight: 500;
@@ -617,6 +647,107 @@ Section .title::after{
     color: #333;
 }
 
+.contact .right form .fields {
+    display: flex;
+}
+
+.contact .right form .field,
+.contact .right form .fields {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact .right form .textarea {
+    height: 80px;
+
+}
+
+.contact .right form .name {
+    margin-right: 10px;
+}
+
+.contact .right form .email {
+    margin-left: 10px;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.contact .right form .textarea textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .right form .button {
+    height: 47px;
+    width: 170px;
+}
+
+.contact .right form .button button {
+    width: 100%;
+    height: 80%;
+    border: 2px solid #256D85;
+    border-radius: 6px;
+    background: #256D85;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contact .right form .button button:hover {
+    background: none;
+    color: #256D85;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer section styling */
+
+footer {
+    background: #000;
+    padding: 20px 23px;
+    color: #fff;
+    text-align: center;
+}
+
+footer span a {
+    color: #256D85;
+    text-decoration: none;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
+
+
+
+
 
 
 
@@ -698,6 +829,7 @@ Section .title::after{
         font-size: 25px;
     }
 
+
     .home .home-content .text-2 {
         font-size: 70px;
     }
@@ -730,9 +862,21 @@ Section .title::after{
     }
 
     .services .serv-content .card, 
-    .skills .skills-content .column {
+    .skills .skills-content .column,
+    .contact .contact-content .column {
         width: 100%;
         margin-bottom: 40px;
+    }
+
+    .scroll-up {
+        height: 33px;
+        width: 31px;
+        font-size: 20px;
+        line-height: 33px;
+    }
+
+    .scroll-up:hover {
+        font-size: 23px;
     }
 }
 

@@ -6,10 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anan Portfolio</title>
+
+
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" 
             integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" 
+            integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
     <script src="https://kit.fontawesome.com/2defdca5f6.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -21,12 +28,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" 
             integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" 
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" 
-            integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" 
+            integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
 </head>
 
 <body>
+
+    <!-- Up button -->
+
+    <div class="scroll-up">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
 
 
 
@@ -37,21 +52,18 @@
         <div class="max-width">
             <div class="logo"><a href="#">Portfol<span>.io</span></a></div>
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Teams</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">About</a></li>
+                <li><a href="#services" class="menu-btn">Services</a></li>
+                <li><a href="#skills" class="menu-btn">Skills</a></li>
+                <li><a href="#works" class="menu-btn">Experiences</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fa fa-bars"></i>
             </div>
         </div>
     </nav>
-
-
-
 
 
 
@@ -64,14 +76,11 @@
             <div class="home-content">
                 <div class="text-1">Hi, This is</div>
                 <div class="text-2">Anan</div>
-                <div class="text-3">Learning <span>Javascript</span></div>
-                <a href="#">Get in Touch</a>
+                <div class="text-3">Learning <span class="typing"></span></div>
+                <a href="#contact">Get in Touch</a>
             </div>
         </div>
     </section>
-
-
-
 
 
 
@@ -95,9 +104,6 @@
     </section>
     
     
-
-
-
 
 
 
@@ -126,8 +132,6 @@
             </div>
         </div>
     </section>
-
-
 
 
 
@@ -171,8 +175,6 @@
         </div>
     </section>
     
-
-
 
 
 
@@ -223,7 +225,7 @@
 
 
 
-
+    <!-- Contact section -->
 
     <section class="contact" id="contact">
         <div class="max-width">
@@ -259,31 +261,40 @@
                 <div class="column right">
                     <div class="text">Send a Message</div>
                     <form action="#">
-                        <div class="field">
+                        <div class="fields">
                             <div class="field name">
                                 <input type="text" placeholder="Enter your Name" required>
                             </div>
                             <div class="field email">
                                 <input type="email" placeholder="Enter your Email Address" required>
                             </div>
-                            <div class="field">
-                                <input type="text" placeholder="Subject" required>
-                            </div>
-                            <div class="field textarea">
-                                <textarea cols="30" rows="10" placeholder="Body"></textarea>
-                            </div>
-                            <div class="button">
-                                <button type="submit">Send Message</button>
-                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Body" required></textarea>
+                        </div>
+                        <div class="button">
+                            <button type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+    <!-- Footer Section -->
+
+    <footer>
+        <span>Created by <a href="#about">ananism17</a> | <span class="far fa-copyright"></span> 2022 all rights reserved</span>
+    </footer>
     
     
-    
+
     
     <script src="script.js"></script>
 

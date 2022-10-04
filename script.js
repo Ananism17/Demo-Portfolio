@@ -8,7 +8,22 @@ $(document).ready(function(){
         }else{
             $('.navbar').removeClass("sticky");
         }
+        if(this.scrollY > 500){
+            $('.scroll-up').addClass("show");
+        }
+        else{
+            $('.scroll-up').removeClass("show");
+        }
     })
+
+    //Scroll up function
+
+    $('.scroll-up').click(function(){
+        $('html').animate({scrollTop: 0});
+    });
+
+
+
 
     //Toggle hamburger button
 
@@ -16,6 +31,20 @@ $(document).ready(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     })
+
+
+
+    //Typing animation function
+
+    let typed = new Typed(".typing", {
+        strings: ['JavaScript', 'HTML', 'CSS', 'Web Development'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+
+
 
 
     //carousel function
